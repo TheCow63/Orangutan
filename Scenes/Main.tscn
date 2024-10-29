@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://d6qgqe00ajnk"]
+
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_ohg26"]
+[ext_resource type="Texture2D" uid="uid://4sj01s6j1hqd" path="res://Assets/Orangutan.png" id="2_efah5"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ohg26")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -100
+layout_mode = 0
+offset_left = -41215.5
+offset_top = -25553.5
+offset_right = 42134.5
+offset_bottom = 26150.5
+color = Color(0, 0.521987, 0.646527, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -465.0
+offset_top = 26.0
+offset_right = 556.0
+offset_bottom = 303.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "Orangutan
+ Simulator"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -329.5
+offset_top = 63.0
+offset_right = -6.5
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Play"
+
+[node name="Orangutan" type="Sprite2D" parent="."]
+position = Vector2(885, 291)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_efah5")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

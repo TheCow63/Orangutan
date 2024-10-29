@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqm4odt16784p"]
+
+[ext_resource type="Texture2D" uid="uid://4sj01s6j1hqd" path="res://Assets/Orangutan.png" id="1_niacb"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_psba4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vhfl"]
+radius = 152.03
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lipex"]
+radius = 164.596
+
+[sub_resource type="Animation" id="Animation_lbtlr"]
+resource_name = "Jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(0.482969, 1.8025, 2.63902),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.5), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_n32vd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eu2vv"]
+_data = {
+"Jump": SubResource("Animation_lbtlr"),
+"RESET": SubResource("Animation_n32vd")
+}
+
+[node name="Player" type="RigidBody2D"]
+collision_layer = 2
+gravity_scale = 2.0
+script = ExtResource("1_psba4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_niacb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3vhfl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.3, 0.3)
+
+[node name="Area2D" type="Area2D" parent="." groups=["Player"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_lipex")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eu2vv")
+}
+speed_scale = 0.5
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

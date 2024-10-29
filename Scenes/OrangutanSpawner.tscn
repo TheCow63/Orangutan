@@ -1,0 +1,110 @@
+[gd_scene load_steps=2 format=3 uid="uid://lp22pg052w1g"]
+
+[ext_resource type="Script" path="res://Scripts/OrangutanSpawner.gd" id="1_x71vl"]
+
+[node name="OrangutanSpawner" type="Node"]
+script = ExtResource("1_x71vl")
+
+[node name="SpawnLocations" type="Node2D" parent="."]
+
+[node name="Position1" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(4020, -380)
+
+[node name="Position2" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(7620, -56)
+
+[node name="Position3" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-363, -469)
+
+[node name="Position4" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-4556, -1541)
+
+[node name="Position5" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(13101, 1044)
+
+[node name="Position6" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(21054, 2395)
+
+[node name="Position7" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(17325, 3175)
+
+[node name="Position8" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(23701, 2708)
+
+[node name="Position9" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(15045, 2510)
+
+[node name="Position10" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(19301, 2797)
+
+[node name="Position11" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(9854, 337)
+
+[node name="Position12" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(6047, -184)
+
+[node name="Position13" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(1898, -40)
+
+[node name="Position14" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-2376, -1136)
+
+[node name="Position15" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(26448, 2886)
+
+[node name="Position16" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(28343, 2523)
+
+[node name="Position17" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(30117, 2160)
+
+[node name="Position18" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(32173, 2039)
+
+[node name="Position19" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-6500, -1895)
+
+[node name="Position20" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-9221, -2604)
+
+[node name="Position21" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-10326, -3574)
+
+[node name="Position22" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-12347, -4598)
+
+[node name="Position23" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-15023, -5514)
+
+[node name="Position24" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-16971, -5844)
+
+[node name="Position25" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-13387, -5197)
+
+[node name="Position26" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-19229, -5832)
+
+[node name="Position27" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-21426, -6911)
+
+[node name="Position28" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-23598, -8117)
+
+[node name="Position29" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-25528, -8904)
+
+[node name="Position30" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-27255, -9641)
+
+[node name="Position31" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-28969, -10174)
+
+[node name="Position32" type="Marker2D" parent="SpawnLocations"]
+position = Vector2(-30734, -11101)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

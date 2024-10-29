@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://yretboekq771"]
+
+[ext_resource type="Script" path="res://Scripts/BananaSpawner.gd" id="1_4igqc"]
+
+[node name="BananaSpawner" type="Node"]
+script = ExtResource("1_4igqc")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="SpawnLocations" type="Node2D" parent="."]
+
+[node name="Position1" type="Marker2D" parent="SpawnLocations"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
